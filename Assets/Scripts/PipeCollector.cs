@@ -23,13 +23,6 @@ public class PipeCollector : MonoBehaviour
             pipeHolders[i].transform.position = temp;
         }
 
-        for (int i = 0; i < pipeHolders.Length; i++)
-        {
-            Vector3 temp = pipeHolders[i].transform.position;
-            temp.x = Random.Range(distanceMin, distanceMax);
-            pipeHolders[i].transform.position = temp;
-        }
-
         lastPipesX = pipeHolders[0].transform.position.x;
 
         for (int i = 1; i < pipeHolders.Length; i++)

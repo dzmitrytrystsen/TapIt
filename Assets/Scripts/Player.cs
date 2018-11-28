@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float forwardSpeed = 3f;
     [SerializeField] private float bounceSpeed = 4f;
     [SerializeField] private float rotationTimeIfFlap = 7f;
+    [SerializeField] private AudioSource myAudioSource;
+    [SerializeField] private AudioClip flapAudioClip, pointAudioClip, deathAudioClip;
 
     private bool didFlap;
     private bool isAlive;
@@ -20,15 +22,15 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+        flapButton = GameObject.FindGameObjectWithTag("FlapButton").GetComponent<Button>();
+        flapButton.onClick.AddListener(() => FlapPlayer());
+
         if (instance == null)
         {
             instance = this;
         }
 
         isAlive = true;
-
-        flapButton = GameObject.FindGameObjectWithTag("FlapButton").GetComponent<Button>();
-        flapButton.onClick.AddListener(() => FlapPlayer());
     }
 	
 	void Update ()
@@ -48,6 +50,7 @@ public class Player : MonoBehaviour
             {
                 didFlap = false;
                 myRigidbody2D.velocity = new Vector2(0, bounceSpeed);
+                myAudioSource.PlayOneShot(flapAudioClip);
                 myAnimator.SetTrigger("Flap");
             }
 
