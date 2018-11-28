@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - Pipe
   - PipeHolder
+  - CameraCollider
   layers:
   - Default
   - TransparentFX
@@ -25,8 +26,8 @@ TagManager:
   - Pipe
   - PipeCollector
   - PipeHolder
-  - 
-  - 
+  - CameraCollider
+  - TopCollider
   - 
   - 
   - 
@@ -52,11 +53,11 @@ TagManager:
   - name: Player
     uniqueID: 2761681697
     locked: 0
-  - name: Ground
-    uniqueID: 2902188385
-    locked: 0
   - name: Pipe
     uniqueID: 3346608639
+    locked: 0
+  - name: Ground
+    uniqueID: 2902188385
     locked: 0
   - name: Canvas
     uniqueID: 1181206887
