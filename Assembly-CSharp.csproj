@@ -115,6 +115,7 @@
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineShot.cs" />
     <Compile Include="Assets\Cinemachine\Timeline\CinemachineTrack.cs" />
     <Compile Include="Assets\Scripts\BackgroundScript.cs" />
+    <Compile Include="Assets\Scripts\Coin.cs" />
     <Compile Include="Assets\Scripts\Collector.cs" />
     <Compile Include="Assets\Scripts\GroundScript.cs" />
     <Compile Include="Assets\Scripts\PipeCollector.cs" />

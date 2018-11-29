@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioSource myAudioSource;
     [SerializeField] private AudioClip flapAudioClip, pointAudioClip, deathAudioClip;
 
+    [SerializeField] public int score;
+
     private bool didFlap;
     private bool isAlive;
     private Button flapButton;
@@ -22,15 +24,18 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+        isAlive = true;
+
         flapButton = GameObject.FindGameObjectWithTag("FlapButton").GetComponent<Button>();
         flapButton.onClick.AddListener(() => FlapPlayer());
+
+        score = 0;
 
         if (instance == null)
         {
             instance = this;
         }
 
-        isAlive = true;
     }
 	
 	void Update ()
@@ -71,5 +76,33 @@ public class Player : MonoBehaviour
     public void FlapPlayer()
     {
         didFlap = true;
+    }
+
+    void OnCollisionEnter2D(Collision2D target)
+    {
+        if (target.gameObject.tag == "Ground" || target.gameObject.tag == "Pipe")
+        {
+            if (isAlive)
+            {
+                isAlive = false;
+
+                myRigidbody2D.velocity = new Vector2(0, bounceSpeed);
+
+                myAnimator.SetTrigger("Death");
+                myAudioSource.PlayOneShot(deathAudioClip);
+            }
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D target)
+    {
+        if (isAlive)
+        {
+            if (target.tag == "Coin")
+            {
+                score++;
+                myAudioSource.PlayOneShot(pointAudioClip);
+            }
+        }
     }
 }

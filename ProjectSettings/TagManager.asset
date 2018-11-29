@@ -10,6 +10,7 @@ TagManager:
   - Pipe
   - PipeHolder
   - CameraCollider
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - PipeHolder
   - CameraCollider
   - TopCollider
-  - 
+  - Coin
   - 
   - 
   - 
@@ -50,11 +51,11 @@ TagManager:
   - name: Background
     uniqueID: 2765241081
     locked: 0
-  - name: Player
-    uniqueID: 2761681697
-    locked: 0
   - name: Pipe
     uniqueID: 3346608639
+    locked: 0
+  - name: Player
+    uniqueID: 2761681697
     locked: 0
   - name: Ground
     uniqueID: 2902188385

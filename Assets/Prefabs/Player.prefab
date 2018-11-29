@@ -77,9 +77,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.031061828, y: -0.4193343}
+  m_Offset: {x: -0.03, y: -0.17}
   serializedVersion: 2
-  m_Radius: 0.44
+  m_Radius: 0.45
 --- !u!82 &82250159184583728
 AudioSource:
   m_ObjectHideFlags: 1
@@ -213,6 +213,7 @@ MonoBehaviour:
   flapAudioClip: {fileID: 8300000, guid: 2b9e057562c7b1940ad027d39d0a34e4, type: 3}
   pointAudioClip: {fileID: 8300000, guid: 3999dde1e7dde95439aabcfffde8fef3, type: 3}
   deathAudioClip: {fileID: 8300000, guid: e64f71803617e3746a2451d33c652454, type: 3}
+  score: 0
 --- !u!212 &212844499510969254
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -246,7 +247,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1533285599
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f25588bd87b16f7468883cc05d753729, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
