@@ -17,12 +17,12 @@ public class Player : MonoBehaviour
     [SerializeField] public int score;
 
     private bool didFlap;
-    private bool isAlive;
+    public bool isAlive;
     private Button flapButton;
 
     public static Player instance;
 
-    void Awake()
+    public void Awake()
     {
         isAlive = true;
 
@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
 
     }
 	
-	void Update ()
+	public void Update ()
     {
         PlayerMovement();
     }
@@ -90,6 +90,8 @@ public class Player : MonoBehaviour
 
                 myAnimator.SetTrigger("Death");
                 myAudioSource.PlayOneShot(deathAudioClip);
+
+                GameplayController.instance.PlayerDiedShowScore(score);
             }
         }
     }
@@ -102,6 +104,8 @@ public class Player : MonoBehaviour
             {
                 score++;
                 myAudioSource.PlayOneShot(pointAudioClip);
+
+                GameplayController.instance.SetScore(score);
             }
         }
     }
